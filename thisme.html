@@ -238,25 +238,32 @@
   
 
   <button onclick="hereFunction()">Tap here</button>
-  <p id="demo" class="text-white"></p>
+  <p id="demo" class="text-dark"></p>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   
   <script>
     function hereFunction() {
-      let person = prompt("Please enter your name ");
-      if (person != null) {
-        document.getElementById("demo").innerHTML = "Hello, Welcome! " + person;
+        let person = prompt("Please enter your name ");
+        if (person != null) {
+          document.getElementById("demo").innerHTML = "Hello " + person + "! How are you doing?";
       }
   
       var personlength = person.length;
       alert("You have written " + personlength + " characters and left with " + (20 - personlength));
   
-      var message = prompt("Compose your text");
+     /* var message = prompt("Compose your text");
       var messagecount = message.slice(0, 120);
-      alert(messagecount);
+      alert(messagecount);*/
+
+      var first = person.slice(0,1); 
+      var firstcharuppercase = first.toUpperCase();
+      var restofcode = person.slice(1,personlength);
+      var restofname = restofcode.toLowerCase();
+      var capitalised = firstcharuppercase + restofname; 
+      alert("Hello " + capitalised);
     }
-    
+
   </script>
   
   </body>
