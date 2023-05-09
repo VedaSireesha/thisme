@@ -226,7 +226,7 @@
     <div class="form-check d-flex justify-content-center mb-4">
       <input class="form-check-input me-2" type="checkbox" value="" id="form4Example4" checked />
       <label class="form-check-label" for="form4Example4">
-        Send me a copy of this message
+        Send me a copy of this message  
       </label>
     </div>
   
@@ -241,14 +241,16 @@
   <p id="demo" class="text-dark"></p>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-  
+   
+
+  <!-- Prompt and variables -->
   <script>
     function hereFunction() {
         let person = prompt("Please enter your name ");
         if (person != null) {
           document.getElementById("demo").innerHTML = "Hello " + person + "! How are you doing?";
       }
-  
+      
       var personlength = person.length;
       alert("You have written " + personlength + " characters and left with " + (20 - personlength));
   
@@ -263,8 +265,93 @@
       var capitalised = firstcharuppercase + restofname; 
       alert("Hello " + capitalised);
     }
-
+    
   </script>
+
+
+  <!-- Prompt and variables -->
+
+
+	<!-- Tip Calculator -->
+
+	<div class="container">
+		<h3 class="text-primary text-center">Tip Calculator</h3>
+		<hr />
+		<div class="calculate_tip">
+		  <input
+			type="text"
+			size="30"
+			placeholder="Enter total amount"
+			id="totalAmount"
+		  /><br /><br />
+		  <label for="totalAmount">Enter total Amount</label><br /><br />
+		  <select id="tipPercentage">
+			<option value="">Select</option>
+			<option value="0.05">5%</option>
+			<option value="0.10">10%</option>
+			<option value="0.15">15%</option>
+			<option value="0.20">20%</option></select
+		  ><br /><br />
+		  <label for="tipPercentage">Enter Tip</label><br /><br />
   
+		  <input
+			type="text"
+			size="30"
+			placeholder="Enter total number of persons"
+			id="totalPersons"
+		  /><br /><br />
+		  <label for="totalPersons">Enter total Persons</label><br /><br />
+  
+		  <button class="btn btn-info" id="calculate">
+			Calculate Total Bill
+		  </button>
+		</div>
+	  </div>
+  
+	  <div class="container">
+		<h5>Total Tip<span class="finalAmount text-danger"></span></h5>
+		<h5>Tip for each person<span class="eachPerson text-danger"></span></h5>
+		<h5>No of Persons<span class="persons text-danger"></span></h5>
+	  </div>
+  
+	  <script>
+		let calculate = document.getElementById("calculate");
+		let finalAmount = document.getElementsByClassName("finalAmount");
+		let eachPerson = document.getElementsByClassName("eachPerson");
+		let persons = document.getElementsByClassName("persons");
+  
+		calculate.addEventListener("click", function () {
+		  let tipPercentage = parseFloat(
+			document.getElementById("tipPercentage").value
+		  );
+		  let totalAmount = parseFloat(
+			document.getElementById("totalAmount").value
+		  );
+		  let totalPersons = parseFloat(
+			document.getElementById("totalPersons").value
+		  );
+  
+		  let totaltip = totalAmount * tipPercentage;
+		  let eachperson = totaltip / totalPersons;
+  
+		  finalAmount[0].innerHTML = totaltip;
+		  eachPerson[0].innerHTML= eachperson;
+		  persons[0].innerHTML = totalPersons;
+  
+  
+		});
+	  </script>
+  
+	  <script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"
+	  ></script>
+
+
+	  <!-- TIP CALCULATOR -->
+
+
+
   </body>
   </html>
